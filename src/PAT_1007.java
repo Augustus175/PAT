@@ -11,7 +11,7 @@ public class PAT_1007 {
 //        System.out.println(num);
         int count = 0;
         if (num > 2) {
-            for (int i = 1; i < num - 2; i++) {
+            for (int i = 1; i <= num - 2; i++) {
                 if ((isPrime(i)) && (isPrime(i + 2))) {
                     count++;
                 }
