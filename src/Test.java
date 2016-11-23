@@ -3,27 +3,78 @@
  */
 import java.util.Scanner;
 
-public class PAT_1014 {
+public class Test {
     public static void main(String[] args)
     {
         StringBuffer sb = new StringBuffer();
         Scanner sc = new Scanner(System.in);
-        String[] lines = new String[4];
-        for (int i = 0; i < 4; i++) {
-            lines[i] = sc.nextLine();
+        String line = null;
+        int l0 = 0;
+        int l1 = 0;
+        int l2 = 0;
+        int l3 = 0;
+        line = sc.nextLine();
+        l0 = line.length();
+        char[] c0 = new char[l0];
+        for (int i = 0; i < l0; i++) {
+            c0[i] = line.charAt(i);
+//            System.out.println(c0[i]);
         }
-       sb = findChar0(lines[0],lines[1]);
-        int min = findChar1(lines[2],lines[3]);
-        if(min < 10)
+        line = sc.nextLine();
+        l1 = line.length();
+        char[] c1 = new char[l1];
+        for (int i = 0; i < l1; i++) {
+            c1[i] = line.charAt(i);
+//            System.out.println(c1[i]);
+        }
+        line = sc.nextLine();
+        l2 = line.length();
+        char[] c2 = new char[l2];
+        for (int i = 0; i < l2; i++) {
+            c2[i] = line.charAt(i);
+//            System.out.println(c2[i]);
+        }
+        line = sc.nextLine();
+        l3 = line.length();
+        char[] c3 = new char[l3];
+        for (int i = 0; i < l3; i++) {
+            c3[i] = line.charAt(i);
+//            System.out.println(c3[i]);
+        }
+        int min1 = 0;
+        int min2 = 0;
+        int max = 0;
+
+        if(l0 >l1)
         {
-            sb.append(0);
-            sb.append(min);
-        }
-        else
+            min1 = l1;
+        }else
         {
-            sb.append(min);
+            min1 = l0;
         }
-        System.out.println(sb.toString());
+        if(l2 >l3)
+        {
+            min1 = l3;
+        }else
+        {
+            min1 = l2;
+        }
+        if(min1 < min2)
+        {
+            max = min2;
+        }else
+        {
+            max = min1;
+        }
+        for (int i = 0; i <max ; i++) {
+            if((c0[i] == c1[i])&&(((c0[i] >= 65)&&(c0[i] <= 90))||((c0[i] >= 97)&&(c0[i] <= 122))))
+            {
+
+            }
+            if((c2[i] == c3[i])&&(((c0[i] >= 65)&&(c0[i] <= 90))||((c0[i] >= 97)&&(c0[i] <= 122))))
+        }
+
+
     }
     public static StringBuffer findChar0(String str0,String str1)
     {
