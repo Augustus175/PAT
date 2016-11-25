@@ -3,7 +3,7 @@
  */
 import java.util.Scanner;
 
-public class Test {
+public class Test_PAT_1014 {
     public static void main(String[] args)
     {
         int min1 = 0;
