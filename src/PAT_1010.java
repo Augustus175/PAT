@@ -14,34 +14,38 @@ public class PAT_1010 {
         for (int i = 0; i < len; i++) {
             num[i] = Integer.parseInt(numstr[i]);
         }
-        if(num.length==1)
+        Boolean flag = false;
+        if((num[1] ==0)&&(num[0] == 0))
         {
-            System.out.println(0);
+//            System.out.print(0+" "+0);
         }
         else {
-            boolean flag = true;
-            if (num[len - 1] == 0) {
-                flag = false;
-                for (int i = 0; i < len - 2; i = i + 2) {
-                    num[i] = num[i] * num[i + 1];
-                    num[i + 1]--;
+
+                if(num[num.length-1] == 0)
+                {
+                    flag = true;
                 }
-            } else {
-                for (int i = 0; i < len; i = i + 2) {
-                    num[i] = num[i] * num[i + 1];
-                    num[i + 1]--;
+                for (int i = 0; i < len - 1; i = i + 2) {
+                    if(num[i+1]==0)
+                    {
+                        num[i] = 0;
+                        num[i+1] = 0;
+                    }else {
+                        num[i] = num[i] * num[i + 1];
+                        num[i + 1]--;
+                    }
                 }
-            }
-            if (flag) {
-                for (int i = 0; i < num.length - 1; i++) {
-                    System.out.print(num[i] + " ");
-                }
-                System.out.println(num[num.length - 1]);
-            } else {
+            if(flag)
+            {
                 for (int i = 0; i < num.length - 3; i++) {
                     System.out.print(num[i] + " ");
                 }
-                System.out.println(num[num.length - 3]);
+                System.out.print(num[num.length - 3]);
+            }else {
+                for (int i = 0; i < num.length - 1; i++) {
+                    System.out.print(num[i] + " ");
+                }
+                System.out.print(num[num.length - 1]);
             }
         }
 
