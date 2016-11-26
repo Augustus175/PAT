@@ -14,28 +14,36 @@ public class PAT_1010 {
         for (int i = 0; i < len; i++) {
             num[i] = Integer.parseInt(numstr[i]);
         }
-        if(num[len -1] == 0)
+        if(num.length==1)
         {
-            for (int i = 0; i < len-2; i= i+2) {
-                num[i] = num[i] * num[i+1];
-                num[i+1]--;
-            }
+            System.out.println(0);
         }
         else {
-            for (int i = 0; i < len; i= i+2) {
-                num[i] = num[i] * num[i+1];
-                num[i+1]--;
-            }
-        }
-        boolean flag = true;
-        for (int i = 0; i < num.length - 1; i++) {
-            if(num[i] == 0)
-            {
+            boolean flag = true;
+            if (num[len - 1] == 0) {
                 flag = false;
-                System.out.print(num[i] + " ");
-               
+                for (int i = 0; i < len - 2; i = i + 2) {
+                    num[i] = num[i] * num[i + 1];
+                    num[i + 1]--;
+                }
+            } else {
+                for (int i = 0; i < len; i = i + 2) {
+                    num[i] = num[i] * num[i + 1];
+                    num[i + 1]--;
+                }
+            }
+            if (flag) {
+                for (int i = 0; i < num.length - 1; i++) {
+                    System.out.print(num[i] + " ");
+                }
+                System.out.println(num[num.length - 1]);
+            } else {
+                for (int i = 0; i < num.length - 3; i++) {
+                    System.out.print(num[i] + " ");
+                }
+                System.out.println(num[num.length - 3]);
             }
         }
-        System.out.println(num[num.length - 1]);
+
     }
 }
