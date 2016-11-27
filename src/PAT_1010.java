@@ -9,7 +9,7 @@ public class PAT_1010 {
         String line = null;
         Scanner sc = new Scanner(System.in);
         line = sc.nextLine();
-//        ä¸ºé˜²æ­¢å¤šä¸ªç©ºæ ¼ä¸€å®šè¦ç”¨è¿™ç§æ ¼å¼
+//       Îª·ÀÖ¹¶à¸ö¿Õ¸ñÒ»¶¨ÒªÓÃÕâÖÖ¸ñÊ½
         String[] numstr = line.split("\\s+");
         int len = numstr.length;
 //        int[] num = new int[len];
