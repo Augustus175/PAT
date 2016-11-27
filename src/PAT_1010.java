@@ -9,6 +9,7 @@ public class PAT_1010 {
         String line = null;
         Scanner sc = new Scanner(System.in);
         line = sc.nextLine();
+//        为防止多个空格一定要用这种格式
         String[] numstr = line.split("\\s+");
         int len = numstr.length;
 //        int[] num = new int[len];
