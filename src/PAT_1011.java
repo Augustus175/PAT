@@ -9,6 +9,7 @@ public class PAT_1011 {
         String line = null;
         Scanner sc = new Scanner(System.in);
         num = sc.nextInt();
+//        不知道为啥这里要向下定位一行
         sc.nextLine();
         long[][] longnum = new long[num][3];
         for (int i = 0; i < num; i++) {
