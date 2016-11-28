@@ -9,26 +9,29 @@ public class PAT_1011 {
         String line = null;
         Scanner sc = new Scanner(System.in);
         num = sc.nextInt();
+        sc.nextLine();
         long[][] longnum = new long[num][3];
         for (int i = 0; i < num; i++) {
             line = sc.nextLine();
             longnum[i][0] = Long.parseLong(line.split("\\s+")[0]);
             longnum[i][1] = Long.parseLong(line.split("\\s+")[1]);
             longnum[i][2] = Long.parseLong(line.split("\\s+")[2]);
+
         }
         for (int i = 0; i < num; i++) {
-            System.out.println("Case #"+i+": "+Com((longnum[i][0]+longnum[i][1]),longnum[i][2]));
+            int j = i+1;
+            System.out.println("Case #"+j+": "+Com((longnum[i][0]+longnum[i][1]),longnum[i][2]));
         }
     }
 
     public static boolean Com( long longnumAB,long longnumC) {
         if(longnumAB > longnumC)
         {
-            return false;
+            return true;
         }
         else
         {
-            return true;
+            return false;
         }
 
     }
