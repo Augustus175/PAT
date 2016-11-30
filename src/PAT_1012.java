@@ -28,14 +28,16 @@ public class PAT_1012 {
             if((num[i] % 5 == 0)&&(num[i] % 2 == 0))
             {
                 even = even + num[i];
-            }else if (num[i] % 5 == 1) {
-                A2count++;
+            }else if (num[i] % 5 == 1)
+            {
+
                 if (A2count % 2 == 0) {
                     numA2 = num[i] + numA2;
                 }else
                 {
-                    numA2 = num[i] +(-1) * numA2;
+                    numA2 = numA2 +(-1) * num[i];
                 }
+                A2count++;
             }else if(num[i] % 5 == 2)
             {
                 A3count++;
@@ -52,8 +54,45 @@ public class PAT_1012 {
             }
         }
         DecimalFormat df = new DecimalFormat("0.0");
-        double res = (double)numA4/A4count;
-        String ave = df.format(res);
-        if()
+        String ave = null;
+        if(A4count == 0)
+        {
+            ave = "N";
+        }
+        else {
+            double res = (double) numA4 / A4count;
+            ave = df.format(res);
+
+        }
+        if(even == 0)
+        {
+            System.out.print("N" + " ");
+        }
+        else{
+            System.out.print(even+ " ");
+        }
+        if (numA2 == 0)
+        {
+            System.out.print("N" + " ");
+        }else
+        {
+            System.out.print(numA2+ " ");
+        }
+        if (A3count == 0)
+        {
+            System.out.print("N" + " ");
+        }else
+        {
+            System.out.print(A3count+ " ");
+        }
+        System.out.print(ave+ " ");
+        if (numA5 == 0)
+        {
+            System.out.print("N");
+        }else
+        {
+            System.out.print(numA5);
+        }
+
     }
 }
