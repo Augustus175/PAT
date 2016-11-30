@@ -62,7 +62,6 @@ public class PAT_1012 {
         else {
             double res = (double) numA4 / A4count;
             ave = df.format(res);
-
         }
         if(even == 0)
         {
