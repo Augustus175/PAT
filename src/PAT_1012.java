@@ -25,33 +25,47 @@ public class PAT_1012 {
         int numA5 = 0;
         for (int i = 0; i < numstr.length; i++) {
             num[i] = Integer.parseInt(numstr[i]);
-            if((num[i] % 5 == 0)&&(num[i] % 2 == 0))
+            int tmp = num[i] % 5;
+            switch(tmp)
             {
-                even = even + num[i];
-            }else if (num[i] % 5 == 1)
-            {
-
-                if (A2count % 2 == 0) {
-                    numA2 = num[i] + numA2;
-                }else
+                case 0:
                 {
-                    numA2 = numA2 +(-1) * num[i];
+                    if(num[i] % 2 == 0)
+                    {
+                        even = even + num[i];
+                    }
+                    break;
                 }
-                A2count++;
-            }else if(num[i] % 5 == 2)
-            {
-                A3count++;
-            }else if (num[i] % 5 == 3)
-            {
-                A4count++;
-                numA4 = numA4 + num[i];
-            }else if (num[i] % 5 == 4)
-            {
-                if (numA5 < num[i])
-                {
-                    numA5 = num[i];
+                case 1:
+                        {
+                            if (A2count % 2 == 0) {
+                                numA2 = num[i] + numA2;
+                            }else
+                            {
+                                numA2 = numA2 + (-1) * num[i];
+                            }
+                            A2count++;
+                            break;
+                        }
+                case 2:
+                        {
+                            A3count++;
+                            break;
+                        }
+                case 3: {
+                    A4count++;
+                    numA4 = numA4 + num[i];
+                    break;
+                }
+                case 4:{
+                    if (numA5 < num[i])
+                    {
+                        numA5 = num[i];
+                    }
+                    break;
                 }
             }
+
         }
         DecimalFormat df = new DecimalFormat("0.0");
         String ave = null;
