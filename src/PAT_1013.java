@@ -1,7 +1,9 @@
 /**
  * Created by thinkpad on 2016/12/1.
  */
+
 import java.util.Scanner;
+
 public class PAT_1013 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -11,38 +13,37 @@ public class PAT_1013 {
         int primeCount = 0;
         int count = 1;
         int j = 0;
-        for (int i = 2; i <= 2147483647; i++) {
-            if (isPrime(i))
-            {
+        if (max < 80) {
+            for (int i = 2; i <= 2147483647; i++) {
+                if (isPrime(i)) {
 
-               primeCount++;
-                if (primeCount >= min)
-                {
-                    prime[j] = i + " ";
-                    j++;
-                }
-                if(primeCount == max)
-                {
-                    break;
+                    primeCount++;
+                    if (primeCount >= min) {
+                        prime[j] = i + " ";
+                        j++;
+                    }
+                    if (primeCount == max) {
+                        break;
+                    }
                 }
             }
-        }
-        for (int i = 0; i < prime.length; i++) {
-            if (count ==10)
-            {
-                count = 0;
-                System.out.print(prime[i].trim());
-                System.out.println();
-            }else if (i == prime.length -1)
-            {
-                System.out.print(prime[i].trim());
-            }else
-            {
-                System.out.print(prime[i]);
+            for (int i = 0; i < prime.length; i++) {
+                if (count == 10) {
+                    count = 0;
+                    System.out.print(prime[i].trim());
+                    System.out.println();
+                } else if (i == prime.length - 1) {
+                    System.out.print(prime[i].trim());
+                } else {
+                    System.out.print(prime[i]);
+                }
+                count++;
             }
-            count++;
+        } else {
+            
         }
     }
+
     public static boolean isPrime(int a) {
 
         boolean flag = true;
