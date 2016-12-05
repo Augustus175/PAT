@@ -1,47 +1,81 @@
 /**
  * Created by thinkpad on 2016/12/1.
  */
+
 import java.util.Scanner;
+import java.util.Map;
+import java.util.HashMap;
+
 public class PAT_1013 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int min = sc.nextInt();
         int max = sc.nextInt();
         String[] prime = new String[max - min + 1];
+        Map<Integer, Integer> primMap = new HashMap<Integer, Integer>();
         int primeCount = 0;
         int count = 1;
         int j = 0;
-        for (int i = 2; i <= 2147483647; i++) {
-            if (isPrime(i))
-            {
 
-               primeCount++;
-                if (primeCount >= min)
-                {
-                    prime[j] = i + " ";
-                    j++;
-                }
-                if(primeCount == max)
-                {
-                    break;
+        if (max < 80) {
+            for (int i = 2; i <= 2147483647; i++) {
+                if (isPrime(i)) {
+
+                    primeCount++;
+                    if (primeCount >= min) {
+                        prime[j] = i + " ";
+                        j++;
+                    }
+                    if (primeCount == max) {
+                        break;
+                    }
                 }
             }
-        }
-        for (int i = 0; i < prime.length; i++) {
-            if (count ==10)
-            {
-                count = 0;
-                System.out.print(prime[i].trim());
-                System.out.println();
-            }else if (i == prime.length -1)
-            {
-                System.out.print(prime[i].trim());
-            }else
-            {
-                System.out.print(prime[i]);
+            for (int i = 0; i < prime.length; i++) {
+                if (count == 10) {
+                    count = 0;
+                    System.out.print(prime[i].trim());
+                    System.out.println();
+                } else if (i == prime.length - 1) {
+                    System.out.print(prime[i].trim());
+                } else {
+                    System.out.print(prime[i]);
+                }
+                count++;
             }
-            count++;
+        } else {
+            for (int i = 2; i <= 2147483647; i++) {
+
+                if (isPrime(i, primMap)) {
+
+                    primeCount++;
+                    if (primeCount >= min) {
+                        prime[j] = i + " ";
+                        primMap.put(j, i);
+                        j++;
+                    }
+                    if (primeCount == max) {
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < prime.length; i++) {
+                if (count == 10) {
+                    count = 0;
+                    System.out.print(prime[i].trim());
+                    System.out.println();
+                } else if (i == prime.length - 1) {
+                    System.out.print(prime[i].trim());
+                } else {
+                    System.out.print(prime[i]);
+                }
+                count++;
+            }
+
         }
+
+
+
     }
     public static boolean isPrime(int a) {
 
@@ -60,5 +94,37 @@ public class PAT_1013 {
             }
         }
         return flag;
+    }
+
+    public static boolean isPrime(int a, Map<Integer, Integer> primMap) {
+
+        boolean flagpre = true;
+        double sq = Math.sqrt(a);
+        for (int i = 0; i < primMap.size(); i++) {
+            if (i > sq) {
+                break;
+            }
+            if (a % primMap.get(i) == 0) {
+                flagpre = false;
+            }
+
+        }
+        boolean flag = true;
+        if (flagpre) {
+            if (a < 2) {
+                return false;
+            } else {
+
+                for (int i = 2; i <= sq; i++) {
+
+                    if (a % i == 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+
+        }
+        return flag && flagpre;
     }
 }
