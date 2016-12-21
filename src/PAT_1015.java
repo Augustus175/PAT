@@ -11,6 +11,7 @@ public class PAT_1015 {
     public static Map<Integer, Integer> moral = new HashMap<Integer, Integer>();
     public static Map<Integer, Integer> talent = new HashMap<Integer, Integer>();
     public static Map<Integer, Integer> total = new HashMap<Integer, Integer>();
+    public static Map<Integer, Integer> index = new HashMap<Integer, Integer>();
     public static int Low = 0;
     public static int High = 0;
 
@@ -34,6 +35,7 @@ public class PAT_1015 {
             moral.put(id, m);
             talent.put(id, ta);
             total.put(id, to);
+            index.put(i, id);
             stuID[i] = id;
 //            moral[i] = m;
 //            talent[i] = ta;
@@ -50,11 +52,30 @@ public class PAT_1015 {
     }
 
     public static int compare(int i, int j) {
-        if (moral.get(i) >= Low && talent.get(i) >= Low)
-        {
+        if (moral.get(i) >= Low && talent.get(i) >= Low) {
+            if (total.get(i) > total.get(j)) {
+                return 0;
+            } else {
+                if (total.get(i) == total.get(j)) {
+                    if (moral.get(i) > moral.get(j)) {
+                        return 0;
+                    } else {
+                        if (moral.get(i) == moral.get(j)) {
+                            if (index.get(i) > index.get(j)) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        } else {
+                            return 1;
+                        }
+                    }
+                } else {
+                    return 1;
+                }
+            }
 
-        }else
-        {
+        } else {
             return -1;
         }
 
