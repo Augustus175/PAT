@@ -42,6 +42,24 @@ public class PAT_1015 {
 //            total[i] = to;
 //            map.put()
         }
+        for (int i = 0; i < stuID.length-1; i++) {
+            if (compare(stuID[i],stuID[i+1])==1)
+            {
+                int k = 0;
+                k = stuID[i];
+                stuID[i] = stuID[i+1];
+                stuID[i+1] = k;
+
+            }
+        }
+        for (int i = 0; i < stuID.length; i++) {
+            System.out.print(stuID[i]);
+            System.out.print("  ");
+            System.out.print(moral.get(stuID[i]));
+            System.out.print("  ");
+            System.out.println(talent.get(stuID[i]));
+
+        }
 //        for (int i = 0; i < Num; i++) {
 //            System.out.println(stuID[i]);
 //            System.out.println(moral[i]);
