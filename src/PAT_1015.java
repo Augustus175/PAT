@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class PAT_1015 {
-    //        Map<Integer, String> map =new  HashMap<String, String>();
     public static Map<Integer, Integer> moral = new HashMap<Integer, Integer>();
     public static Map<Integer, Integer> talent = new HashMap<Integer, Integer>();
     public static Map<Integer, Integer> total = new HashMap<Integer, Integer>();
@@ -22,9 +21,7 @@ public class PAT_1015 {
         Low = sc.nextInt();
         High = sc.nextInt();
         int[] stuID = new int[Num];
-//        int[] moral = new int[Num];
-//        int[] talent = new int[Num];
-//        int[] total = new int[Num];
+
 
         for (int i = 0; i < Num; i++) {
             int id = sc.nextInt();
@@ -37,18 +34,14 @@ public class PAT_1015 {
             total.put(id, to);
             index.put(i, id);
             stuID[i] = id;
-//            moral[i] = m;
-//            talent[i] = ta;
-//            total[i] = to;
-//            map.put()
+
         }
-        for (int i = 0; i < stuID.length-1; i++) {
-            if (compare(stuID[i],stuID[i+1])==1)
-            {
+        for (int i = 0; i < stuID.length - 1; i++) {
+            if (compare(stuID[i], stuID[i + 1]) == 1) {
                 int k = 0;
                 k = stuID[i];
-                stuID[i] = stuID[i+1];
-                stuID[i+1] = k;
+                stuID[i] = stuID[i + 1];
+                stuID[i + 1] = k;
 
             }
         }
@@ -60,12 +53,7 @@ public class PAT_1015 {
             System.out.println(talent.get(stuID[i]));
 
         }
-//        for (int i = 0; i < Num; i++) {
-//            System.out.println(stuID[i]);
-//            System.out.println(moral[i]);
-//            System.out.println(talent[i]);
-//            System.out.println(total[i]);
-//        }
+
 
     }
 
