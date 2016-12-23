@@ -37,24 +37,26 @@ public class PAT_1015 {
 
         }
         for (int i = 0; i < stuID.length - 1; i++) {
+
             if (compare(stuID[i], stuID[i + 1]) == 1) {
                 int k = 0;
                 k = stuID[i];
                 stuID[i] = stuID[i + 1];
                 stuID[i + 1] = k;
-
+            }else if(compare(stuID[i], stuID[i + 1]) == -1){
+                stuID[i] = 0;
             }
         }
+        System.out.println("------------------------------------------------------------------------");
         for (int i = 0; i < stuID.length; i++) {
-            System.out.print(stuID[i]);
-            System.out.print("  ");
-            System.out.print(moral.get(stuID[i]));
-            System.out.print("  ");
-            System.out.println(talent.get(stuID[i]));
-
+            if (stuID[i] != 0) {
+                System.out.print(stuID[i]);
+                System.out.print("  ");
+                System.out.print(moral.get(stuID[i]));
+                System.out.print("  ");
+                System.out.println(talent.get(stuID[i]));
+            }
         }
-
-
     }
 
     public static int compare(int i, int j) {
