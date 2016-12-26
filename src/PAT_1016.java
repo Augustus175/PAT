@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 /**
  * Created by Gavin.Stevenson on 2016/12/26.
  */
@@ -13,9 +14,22 @@ public class PAT_1016 {
         System.out.println(DA);
         System.out.println(B);
         System.out.println(DB);
+        newNum(A, 1);
     }
-    public static int newNum(String a, int da)
-    {
+
+    public static int newNum(int a, int da) {
+        int newnum = 0;
+        for (int i = a; i != 0; i = i / 10) {
+            int j = i % 10;
+            if (j == da) {
+                if (newnum == 0) {
+                    newnum = 1;
+                } else {
+                    newnum = newnum * 10;
+                }
+            }
+            System.out.println(j);
+        }
 
         return 1;
     }
