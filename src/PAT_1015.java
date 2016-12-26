@@ -147,8 +147,6 @@ public class PAT_1015 {
                         return 0;
                     } else {
                         if (moral.get(i).equals(moral.get(j))) {
-//                            System.out.println(index.get(i));
-//                            System.out.println(index.get(j));
                             if (index.get(i) > index.get(j)) {
                                 return 1;
                             } else {
