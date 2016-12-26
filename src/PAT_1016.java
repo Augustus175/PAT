@@ -30,7 +30,15 @@ public class PAT_1016 {
             }
             System.out.println(j);
         }
+        if (newnum != 0) {
+            newnum = da * ((newnum - 1) / 9);
+            System.out.println("-----------------------------------------");
+            System.out.println(newnum);
+            return newnum;
+        } else {
+            return -1;
+        }
 
-        return 1;
+
     }
 }
