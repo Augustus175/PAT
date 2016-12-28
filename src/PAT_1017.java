@@ -11,9 +11,11 @@ public class PAT_1017 {
 
         BigInteger A =sc.nextBigInteger();
 
-        int B = sc.nextInt();
-
-        System.out.println(A);
-        System.out.println(B);
+        BigInteger B = sc.nextBigInteger();
+        BigInteger Q = A.divide(B);
+        BigInteger R = A.mod(B);
+//      输出不能换行，就是说下面这一行是错的，最后一行才是对的
+//        System.out.println(Q +" "+R);
+        System.out.println(Q +" "+R);
     }
 }
