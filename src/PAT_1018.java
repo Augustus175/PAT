@@ -9,6 +9,9 @@ public class PAT_1018 {
         int num = sc.nextInt();
         int[] aresult = new int[3];
         int[] bresult = new int[3];
+//        action数组是按顺序存储的，因为题目的第三个要求是需要给出获胜中使用最多手势，同时如有相同多的手势就必须按相对小的字幕输出
+//        因此action数组必须按顺序存储，action[0]存的是J的次数，action[1]存C的次数，action[2]存B的次数，这样才有了最下面的findAction
+//        函数的写法
         int[] aaction = new int[3];
         int[] baction = new int[3];
 
