@@ -20,13 +20,13 @@ public class PAT_1022 {
             tmp = tmp / D;
 
         }while (tmp != 0);
-        for (int i = 0; i < result.size(); i++) {
+        for (int i = result.size()-1; i >= 0; i--) {
             System.out.print(result.get(i));
         }
-        System.out.println(A);
-        System.out.println(B);
-        System.out.println(D);
-        System.out.println(tmp);
+//        System.out.println(A);
+//        System.out.println(B);
+//        System.out.println(D);
+//        System.out.println(tmp);
     }
 
 }
