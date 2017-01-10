@@ -24,18 +24,13 @@ public class PAT_2030 {
         for (int i = n - 1; i >= 0; i--) {
             for (int j = 0; j < n; j++) {
                 if (num[i] <= num_p[j]) {
-                    int t = i - j + 1;
+                    int t = (i - j + 1);
                     if (t > max) {
                         max = t;
                     }
                 }
             }
         }
-//        System.out.println();
-//        for (int i = 0; i < n; i++) {
-//            System.out.print(" ");
-//            System.out.print(num_p[i]);
-//        }
-            System.out.println(max);
+        System.out.println(max);
     }
 }
