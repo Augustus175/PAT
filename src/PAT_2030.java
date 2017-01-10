@@ -27,7 +27,6 @@ public class PAT_2030 {
                     int t = i - j + 1;
                     if (t > max) {
                         max = t;
-                        break;
                     }
                 }
             }
