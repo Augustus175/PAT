@@ -26,8 +26,8 @@ public class PAT_1029 {
                 }
                 if (char1.get(i) == c) {
                     char1.remove(i);
-                    --len;//减少一个
-                    --i;//多谢deny_guoshou指正，如果不加会出现评论1楼所说的情况。
+                    --len;
+                    --i;
                 }
             }
         }
