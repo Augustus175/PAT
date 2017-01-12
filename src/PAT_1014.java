@@ -85,6 +85,7 @@ public class PAT_1014 {
                 break;
             }
         }
+
         return n;
     }
     public static String switchWeek(char c)
