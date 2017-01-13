@@ -21,6 +21,7 @@ public class PAT_1034 {
         int a2 = Integer.parseInt(str2.replaceAll("/", " ").split(" ")[0]);
         int b2 = Integer.parseInt(str2.replaceAll("/", " ").split(" ")[1]);
 //        B = Fractional(a2, b2);
+
 //        System.out.println(B[0] + " " + B[1] + "/" + B[2]);
 
         int den = b1 * b2;
