@@ -10,19 +10,18 @@ public class PAT_1034 {
         String str2 = sc.next();
         System.out.println(str1);
         System.out.println(str2);
-        int[] A =null;
+        int[] A = null;
         int[] B = null;
 
         int a1 = Integer.parseInt(str1.replaceAll("/", " ").split(" ")[0]);
         int b1 = Integer.parseInt(str1.replaceAll("/", " ").split(" ")[1]);
-//        A = Fractional(a1, b1);
-//        System.out.println(A[0] + " " + A[1] + "/" + A[2]);
+        A = Fractional(a1, b1);
+        System.out.println(A[0] + " " + A[1] + "/" + A[2]);
 
         int a2 = Integer.parseInt(str2.replaceAll("/", " ").split(" ")[0]);
         int b2 = Integer.parseInt(str2.replaceAll("/", " ").split(" ")[1]);
-//        B = Fractional(a2, b2);
-
-//        System.out.println(B[0] + " " + B[1] + "/" + B[2]);
+        B = Fractional(a2, b2);
+        System.out.println(B[0] + " " + B[1] + "/" + B[2]);
 
         int den = b1 * b2;
 
@@ -49,16 +48,28 @@ public class PAT_1034 {
 
     }
 
+    //    public static int mod(int a, int b) {
+//        if (a < b)
+//            return mod(b, a);
+//
+//        while (a % b != 0) {
+//            int temp = b;
+//            b = a % b;
+//            a = temp;
+//        }
+//        return b;
+//    }
     public static int mod(int a, int b) {
-        if (a < b)
-            return mod(b, a);
-
-        while (a % b != 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
+        if (a % b == 0) {
+            return b;
+        } else {
+            while (b != 0) {
+                int temp = a % b;
+                a = b;
+                b = temp;
+            }
+            return a;
         }
-        return b;
     }
 
     public static int[] Fractional(int a, int b) {
