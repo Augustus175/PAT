@@ -103,21 +103,6 @@ public class PAT_1034 {
             re[2] = Math.abs(re[2]);
             flag = true;
         }
-//        if (re[1]==0) {
-//            sb.append(0);
-//        } else {
-//            if (re[0] == 0) {
-//            sb.append(re[1]);
-//            sb.append("/");
-//            sb.append(re[2]);
-//            } else {
-//                sb.append(re[0]);
-//                sb.append(" ");
-//                sb.append(re[1]);
-//                sb.append("/");
-//                sb.append(re[2]);
-//            }
-//        }
         if (re[0] == 0 && re[1] == 0) {
             sb.append(0);
         } else {
