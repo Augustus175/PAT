@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Created by Gavin.Stevenson on 2017/1/11.
  */
-public class PAT_2031 {
+public class PAT_1031 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();

@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * Created by Gavin.Stevenson on 2017/1/10.
  */
-public class PAT_2030 {
+public class PAT_1030 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
