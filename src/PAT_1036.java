@@ -11,8 +11,6 @@ public class PAT_1036 {
         int weigth = (int) Math.rint((double) num / 2);
         System.out.println(weigth);
         if (num >= 3 && num <= 20) {
-//        System.out.println(weigth);
-//        System.out.println((int) Math.rint((double) num / 2));
             for (int i = 0; i < num; i++) {
                 System.out.print(str);
             }
