@@ -12,7 +12,7 @@ public class PAT_1035 {
                 j--;
             }
 //            j在while循环中多减了1，这里要加回来
-            num[j+1] = tmp;
+            num[j + 1] = tmp;
         }
 
         return num;
