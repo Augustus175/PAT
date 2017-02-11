@@ -20,12 +20,12 @@ public class PAT_1053 {
 
         int[] restime = new int[N];
 
-        double[][] survey = new double[N][];
+        double[][] survey = new double[N][200];
 
         for (int i = 0; i < N; i++) {
 
             time[i] = sc.nextInt();
-
+            survey[i] = new double[(time[i])];
             for (int j = 0; j < time[i]; j++) {
 
                 survey[i][j] = sc.nextDouble();
@@ -71,7 +71,16 @@ public class PAT_1053 {
 
         double r2 = (double) ban / N * 100;
 
-        System.out.println(df.format(r1+"% "+r2+"%"));
+        String s1 = "0.0";
+        String s2 = "0.0";
+        if (0- r1<0) {
+
+            s1 = df.format(r1);
+        }
+        if (0- r2<0) {
+            s2 = df.format(r2);
+        }
+        System.out.println(s1 + "% " + s2 + "%");
 
     }
 }
